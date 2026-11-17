@@ -1,0 +1,249 @@
+{
+  "_about": "Editing mechanics measured from 10 public short-form videos by a top creator (796 s, 30 fps, 1080x1920). Every value here is mechanics only: pacing, layouts and timing. See rules.md: no other creator's branding is ever copied.",
+  "_labels": "Each block says which values are measured (M), estimated (E) or house choices (H).",
+  "canvas": {
+    "w": 1080,
+    "h": 1920,
+    "fps": 30
+  },
+  "layouts": {
+    "A": "head only: full-frame talking head, caption low",
+    "B": "head + title: two-line title in the top band at the start",
+    "C": "head + top graphic: card, logo, photo or list in the top band, face untouched",
+    "D": "full plate: light plate, one rounded graphic card, caption kept",
+    "E": "plate + inset: speaker shrinks into a rounded card on a plate"
+  },
+  "pacing": {
+    "_label": "M",
+    "shot_len_s": {
+      "p10": 0.3,
+      "p50": 2.4,
+      "p90": 7.6
+    },
+    "head_shot_len_s": {
+      "p10": 0.33,
+      "p50": 2.92,
+      "p90": 8.22
+    },
+    "plate_shot_len_s": {
+      "p10": 0.3,
+      "p50": 1.0,
+      "p90": 5.26
+    },
+    "cuts_per_min": {
+      "median": 17,
+      "min": 6.7,
+      "max": 42.4
+    },
+    "changes_per_10s": {
+      "median": 3.3,
+      "min": 1.3,
+      "max": 8.6
+    },
+    "first_cut_s_median": 7.0,
+    "time_share": {
+      "head": 0.873,
+      "plate": 0.127
+    },
+    "plate_share_cap": 0.25,
+    "opens_on": "A",
+    "closes_on": "A",
+    "no_silence_over_s": 0.3
+  },
+  "planner": {
+    "_label": "H",
+    "_note": "How the scripts turn the measured pacing into a plan.",
+    "head_shot_target_s": 2.9,
+    "head_shot_min_s": 0.8,
+    "head_shot_max_s": 8.2,
+    "plate_shot_min_s": 1.0,
+    "plate_shot_max_s": 5.2,
+    "phrase_gap_s": 0.12,
+    "alternate_scale": [
+      1.0,
+      1.12
+    ]
+  },
+  "zoom": {
+    "_label": "M for ratios, E for the reading",
+    "cuts_growing_8pct": 0.25,
+    "ratio_p10_p25_p50_p75_p90": [
+      0.814,
+      0.893,
+      0.993,
+      1.079,
+      1.194
+    ],
+    "recipe": "jump cuts alternate between two fixed scales, 1.0 and 1.12, anchored on the face centre. No slow push-ins."
+  },
+  "geometry": {
+    "_label": "M unless noted. Fractions of the frame; pixels at 1080x1920.",
+    "face_box": {
+      "x": 0.389,
+      "y": 0.433,
+      "w": 0.267,
+      "h": 0.15
+    },
+    "face_centre": {
+      "x": 0.522,
+      "y": 0.508
+    },
+    "face_width_p10_p90": [
+      0.226,
+      0.319
+    ],
+    "caption_band": {
+      "y0": 0.74,
+      "y1": 0.802,
+      "centre": 0.771
+    },
+    "graphic_zone": {
+      "y0": 0.06,
+      "y1": 0.33,
+      "_label": "E"
+    },
+    "title_block": {
+      "y0": 0.14,
+      "y1": 0.27,
+      "_label": "E"
+    }
+  },
+  "captions": {
+    "words_per_caption": "1, merge up to 2 when a word is shorter than 0.2 s",
+    "swap_interval_s_p10_p25_p50_p75_p90": [
+      0.133,
+      0.2,
+      0.333,
+      0.467,
+      0.6
+    ],
+    "dwell_frames_median": 10,
+    "position": "centred; centre line at 0.771 of frame height; never moves between layouts",
+    "case": "as spoken (sentence case), bold sans, soft shadow",
+    "emphasis_frame_share": 0.1,
+    "on_plates": "same row and size, softer contrast",
+    "match_rule": "caption text is the speaker's words exactly, taken from tight_words.json. Never reworded."
+  },
+  "animation": {
+    "_label": "M for frame counts; exits are H (not measured in the study)",
+    "entrance_frames_p10_p25_p50_p75_p90": [
+      0,
+      1,
+      2,
+      4.75,
+      6
+    ],
+    "snap": {
+      "frames": 2,
+      "share": 0.65,
+      "use": "keyword text, logos, list lines"
+    },
+    "pop": {
+      "frames": 5,
+      "from_scale": 0.4,
+      "to_scale": 1.0,
+      "easing": "ease-out cubic",
+      "use": "photos, cards, product shots"
+    },
+    "exit": {
+      "frames": 3,
+      "kind": "opacity and 0.9 scale",
+      "_label": "H"
+    },
+    "graphic_hold_s": {
+      "min": 1.2,
+      "max": 4.0,
+      "_label": "H"
+    },
+    "keyword_hold_s": {
+      "min": 1.0,
+      "max": 1.6,
+      "_label": "H"
+    }
+  },
+  "graphics": {
+    "_label": "E, read from 1 fps sheets",
+    "kinds": {
+      "plate_card": {
+        "layout": "D",
+        "where": "full screen plate, one rounded card centred",
+        "width_frac": 0.86,
+        "trigger": "a tool, chat, document or screen is named"
+      },
+      "product_card": {
+        "layout": "C",
+        "where": "top zone",
+        "width_frac": [
+          0.55,
+          0.7
+        ],
+        "trigger": "a product or site is named"
+      },
+      "photo_insert": {
+        "layout": "C",
+        "where": "top zone corner",
+        "width_frac": [
+          0.15,
+          0.25
+        ],
+        "trigger": "a person is named or a reaction beat"
+      },
+      "logo": {
+        "layout": "C",
+        "where": "top zone, small",
+        "width_frac": 0.22,
+        "trigger": "a company is named"
+      },
+      "numbered_list": {
+        "layout": "C",
+        "where": "top-left, builds one line per spoken item",
+        "trigger": "each item is spoken"
+      },
+      "keyword_text": {
+        "layout": "C",
+        "where": "top zone or centre",
+        "trigger": "a punchline or key phrase"
+      },
+      "plate_inset": {
+        "layout": "E",
+        "where": "speaker in a rounded card on a plate, title above",
+        "trigger": "a long walkthrough of one real thing"
+      }
+    },
+    "rule": "A graphic is always a real thing tied to a spoken word, and gone within a few seconds. Where there is nothing real to show, show nothing."
+  },
+  "audio": {
+    "target_lufs": -14,
+    "true_peak_max_dbtp": -1,
+    "_label": "H: house target. Her files range -34 to -15 LUFS and are not a model."
+  },
+  "capture_targets": {
+    "_label": "used by the intake check",
+    "face_width_frac_ok": [
+      0.19,
+      0.38
+    ],
+    "face_centre_x_ok": [
+      0.4,
+      0.64
+    ],
+    "face_centre_y_ok": [
+      0.4,
+      0.62
+    ],
+    "min_width_px": 1080,
+    "face_found_min_share": 0.6
+  },
+  "brand": {
+    "_label": "Placeholder. The real values come from brands/ (see scripts/common.py load_brand).",
+    "ink": "#0E0E0E",
+    "accent": "#FF3B2F",
+    "accent_soft": "#FFD9D6",
+    "muted": "#9A9AA5",
+    "surface": "#F4F4F6",
+    "white": "#FFFFFF",
+    "font": "Roboto",
+    "plate": "#FFFFFF",
+    "logo_end_only": true
+  }
+}

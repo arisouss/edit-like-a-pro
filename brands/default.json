@@ -1,0 +1,23 @@
+{
+ "_about": "The default look: black, white and one red accent, in Roboto. Copy this file, change the colors and the font, and pick your copy with brand.json in the video's work folder.",
+ "name": "default",
+ "font": "Roboto",
+ "font_files": {
+  "400": "fonts/roboto-400.woff2",
+  "500": "fonts/roboto-500.woff2",
+  "700": "fonts/roboto-700.woff2",
+  "900": "fonts/roboto-900.woff2"
+ },
+ "ink": "#0E0E0E",
+ "accent": "#FF3B2F",
+ "accent_soft": "#FFD9D6",
+ "muted": "#9A9AA5",
+ "surface": "#F4F4F6",
+ "white": "#FFFFFF",
+ "plate": "#FFFFFF",
+ "cta": "#FF3B2F",
+ "warn": "#FFB020",
+ "ok": "#7BD88F",
+ "end_logo": null,
+ "logo_end_only": false
+}
