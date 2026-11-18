@@ -2,7 +2,7 @@
 
 A Claude Code skill that edits a raw talking-head video (iPhone or any vertical clip) into a polished short-form video. It transcribes, cuts in real silence, plans shots and graphics, shows you a storyboard for approval, renders with Remotion, then checks the result with a fresh reviewer.
 
-Made by @itsarisouss, with Claude.
+Made by @itsarisouss, with Claude. Questions or ideas: itsarisouss@gmail.com
 
 ## What it does
 
